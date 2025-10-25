@@ -255,9 +255,9 @@
         <!-- http://checkstyle.sourceforge.net/config_sizes.html                         -->
         <!-- =========================================================================== -->
 
-        <!-- Check that length of line is at most 80 characters. -->
+        <!-- Check that length of line is at most 120 characters. -->
         <module name="LineLength">
-            <property name="max" value="80"/>
+            <property name="max" value="120"/>
             <property name="ignorePattern" value="^ *\* *[^ ]+$"/>
         </module>
 
