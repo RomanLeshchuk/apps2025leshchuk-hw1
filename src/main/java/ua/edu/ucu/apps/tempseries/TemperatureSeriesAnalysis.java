@@ -4,26 +4,25 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 
 public class TemperatureSeriesAnalysis {
-    private static final int defaultCapacity = 10;
-    public static final double lowestTemp = -273.0;
+    private static final int DefaultCapacity = 10;
+    public static final double LowestTemp = -273.0;
 
     private double[] temperatureSeries;
     int realLen;
 
     public TemperatureSeriesAnalysis() {
-        temperatureSeries = new double[defaultCapacity];
+        temperatureSeries = new double[DefaultCapacity];
         realLen = 0;
     }
 
     public TemperatureSeriesAnalysis(double[] temperatureSeries) {
         for (double temp : temperatureSeries) {
-            if (temp < lowestTemp) {
+            if (temp < LowestTemp) {
                 throw new InputMismatchException();
             }
         }
+        this.temperatureSeries = Arrays.copyOf(temperatureSeries, temperatureSeries.length);
         realLen = temperatureSeries.length;
-        this.temperatureSeries = Arrays.copyOf(temperatureSeries, realLen);
-        
     }
 
     public double average() {
@@ -142,7 +141,7 @@ public class TemperatureSeriesAnalysis {
 
     public int addTemps(double... temps) {
         for (double temp : temps) {
-            if (temp < lowestTemp) {
+            if (temp < LowestTemp) {
                 throw new InputMismatchException();
             }
         }

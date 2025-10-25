@@ -322,7 +322,7 @@ public class TemperatureSeriesAnalysisTest {
     @Test(expected = InputMismatchException.class)
     public void testAddTempsInvalid() {
         TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis();
-        seriesAnalysis.addTemps(1.0, TemperatureSeriesAnalysis.lowestTemp - 1.0, 3.0);
+        seriesAnalysis.addTemps(1.0, TemperatureSeriesAnalysis.LowestTemp - 1.0, 3.0);
     }
 
     @Test
@@ -330,7 +330,7 @@ public class TemperatureSeriesAnalysisTest {
         double[] initial = {1.0, 2.0};
         TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(initial);
         try {
-            seriesAnalysis.addTemps(3.0, TemperatureSeriesAnalysis.lowestTemp - 1.0);
+            seriesAnalysis.addTemps(3.0, TemperatureSeriesAnalysis.LowestTemp - 1.0);
             fail("Expected InputMismatchException");
         } catch (InputMismatchException e) {
             // expected
@@ -368,14 +368,14 @@ public class TemperatureSeriesAnalysisTest {
 
     @Test(expected = InputMismatchException.class)
     public void testConstructorWithInvalidTemp() {
-        double[] temperatureSeries = {1.0, TemperatureSeriesAnalysis.lowestTemp - 1.0};
+        double[] temperatureSeries = {1.0, TemperatureSeriesAnalysis.LowestTemp - 1.0};
         new TemperatureSeriesAnalysis(temperatureSeries);
     }
 
     @Test
     public void testConstructorWithBoundaryTemp() {
-        double[] temperatureSeries = {TemperatureSeriesAnalysis.lowestTemp};
+        double[] temperatureSeries = {TemperatureSeriesAnalysis.LowestTemp};
         TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-        assertEquals(TemperatureSeriesAnalysis.lowestTemp, seriesAnalysis.min(), DELTA);
+        assertEquals(TemperatureSeriesAnalysis.LowestTemp, seriesAnalysis.min(), DELTA);
     }
 }

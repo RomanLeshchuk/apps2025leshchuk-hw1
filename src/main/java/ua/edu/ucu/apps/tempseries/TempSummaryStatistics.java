@@ -6,8 +6,8 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class TempSummaryStatistics {
-    final double avgTemp;
-    final double devTemp;
-    final double minTemp;
-    final double maxTemp;
+    private final double avgTemp;
+    private final double devTemp;
+    private final double minTemp;
+    private final double maxTemp;
 }
