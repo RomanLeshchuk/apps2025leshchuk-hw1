@@ -4,20 +4,20 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 
 public class TemperatureSeriesAnalysis {
-    private static final int DefaultCapacity = 10;
-    public static final double LowestTemp = -273.0;
+    public static final double LOWEST_TEMP = -273.0;
+    private static final int DEFAULT_CAPACITY = 10;
 
     private double[] temperatureSeries;
-    int realLen;
+    private int realLen;
 
     public TemperatureSeriesAnalysis() {
-        temperatureSeries = new double[DefaultCapacity];
+        temperatureSeries = new double[DEFAULT_CAPACITY];
         realLen = 0;
     }
 
     public TemperatureSeriesAnalysis(double[] temperatureSeries) {
         for (double temp : temperatureSeries) {
-            if (temp < LowestTemp) {
+            if (temp < LOWEST_TEMP) {
                 throw new InputMismatchException();
             }
         }
@@ -120,7 +120,7 @@ public class TemperatureSeriesAnalysis {
     }
 
     public void reset() {
-        temperatureSeries = new double[10];
+        temperatureSeries = new double[DEFAULT_CAPACITY];
         realLen = 0;
     }
 
@@ -141,7 +141,7 @@ public class TemperatureSeriesAnalysis {
 
     public int addTemps(double... temps) {
         for (double temp : temps) {
-            if (temp < LowestTemp) {
+            if (temp < LOWEST_TEMP) {
                 throw new InputMismatchException();
             }
         }
@@ -155,6 +155,7 @@ public class TemperatureSeriesAnalysis {
         for (int i = 0; i < temps.length; ++i) {
             temperatureSeries[realLen + i] = temps[i];
         }
-        return realLen += temps.length;
+        realLen += temps.length;
+        return realLen;
     }
 }
