@@ -8,7 +8,7 @@ import ua.edu.ucu.apps.tempseries.TemperatureSeriesAnalysis;
 
 import java.util.InputMismatchException;
 
-public class TemperatureSeriesAnalysisTest {
+public final class TemperatureSeriesAnalysisTest {
 
     private static final double DELTA = 0.00001;
 

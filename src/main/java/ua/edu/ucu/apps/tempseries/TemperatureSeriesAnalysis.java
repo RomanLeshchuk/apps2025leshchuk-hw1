@@ -3,7 +3,7 @@ package ua.edu.ucu.apps.tempseries;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 
-public class TemperatureSeriesAnalysis {
+public final class TemperatureSeriesAnalysis {
     public static final double LOWEST_TEMP = -273.0;
     private static final int DEFAULT_CAPACITY = 10;
 
