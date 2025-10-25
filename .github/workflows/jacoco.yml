@@ -3,6 +3,8 @@ name: Measure code coverage
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:

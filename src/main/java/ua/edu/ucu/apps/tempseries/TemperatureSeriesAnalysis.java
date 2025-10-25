@@ -40,7 +40,7 @@ public class TemperatureSeriesAnalysis {
         double avg = average();
         double res = 0.0;
         for (int i = 0; i < realLen; ++i) {
-            res += Math.pow(temperatureSeries[i] - avg, 2);
+            res += (temperatureSeries[i] - avg) * (temperatureSeries[i] - avg);
         }
         return Math.sqrt(res / realLen);
     }
